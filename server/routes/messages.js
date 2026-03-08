@@ -7,8 +7,8 @@ const db = require('../config/database');
 router.get('/:other_user_id', authMiddleware, async (req, res) => {
   try {
     const result = await db.query(
-      'SELECT * FROM messages WHERE (sender_id = $1 AND receiver_id = $2) OR (sender_id = $2 AND receiver_id = $1) ORDER BY created_at ASC',
-      [req.user.id, req.params.other_user_id]
+      'SELECT * FROM messages WHERE (sender_id = ? AND receiver_id = ?) OR (sender_id = ? AND receiver_id = ?) ORDER BY created_at ASC',
+      [req.user.id, req.params.other_user_id, req.params.other_user_id, req.user.id]
     );
     res.json(result.rows);
   } catch (err) {
@@ -21,7 +21,7 @@ router.post('/', authMiddleware, async (req, res) => {
   try {
     const { receiver_id, content } = req.body;
     const result = await db.query(
-      'INSERT INTO messages (sender_id, receiver_id, content) VALUES ($1, $2, $3) RETURNING *',
+      'INSERT INTO messages (sender_id, receiver_id, content) VALUES (?, ?, ?)',
       [req.user.id, receiver_id, content]
     );
     res.status(201).json(result.rows[0]);

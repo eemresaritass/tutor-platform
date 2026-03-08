@@ -6,7 +6,7 @@ const db = require('../config/database');
 // Get all teachers
 router.get('/teachers', async (req, res) => {
   try {
-    const result = await db.query('SELECT id, name, bio, hourly_rate FROM users WHERE role = $1', ['teacher']);
+    const result = await db.query('SELECT id, name, bio, hourly_rate FROM users WHERE role = ?', ['teacher']);
     res.json(result.rows || []);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -16,7 +16,7 @@ router.get('/teachers', async (req, res) => {
 // Get user profile
 router.get('/:id', async (req, res) => {
   try {
-    const result = await db.query('SELECT id, name, email, role, bio, hourly_rate FROM users WHERE id = $1', [req.params.id]);
+    const result = await db.query('SELECT id, name, email, role, bio, hourly_rate FROM users WHERE id = ?', [req.params.id]);
     if (result.rows.length > 0) {
       res.json(result.rows[0]);
     } else {
@@ -32,10 +32,10 @@ router.put('/:id', authMiddleware, async (req, res) => {
   try {
     const { name, bio, hourly_rate } = req.body;
     await db.query(
-      'UPDATE users SET name = $1, bio = $2, hourly_rate = $3 WHERE id = $4',
+      'UPDATE users SET name = ?, bio = ?, hourly_rate = ? WHERE id = ?',
       [name, bio, hourly_rate, req.params.id]
     );
-    const result = await db.query('SELECT id, name, email, role FROM users WHERE id = $1', [req.params.id]);
+    const result = await db.query('SELECT id, name, email, role FROM users WHERE id = ?', [req.params.id]);
     res.json(result.rows[0]);
   } catch (err) {
     res.status(500).json({ error: err.message });

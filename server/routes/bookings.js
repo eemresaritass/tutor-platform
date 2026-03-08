@@ -7,7 +7,7 @@ const db = require('../config/database');
 router.get('/', authMiddleware, async (req, res) => {
   try {
     const result = await db.query(
-      'SELECT b.*, l.subject, u.name as teacher_name FROM bookings b JOIN lessons l ON b.lesson_id = l.id JOIN users u ON l.teacher_id = u.id WHERE b.student_id = $1 ORDER BY b.scheduled_date DESC',
+      'SELECT b.*, l.subject, u.name as teacher_name FROM bookings b JOIN lessons l ON b.lesson_id = l.id JOIN users u ON l.teacher_id = u.id WHERE b.student_id = ? ORDER BY b.scheduled_date DESC',
       [req.user.id]
     );
     res.json(result.rows || []);
@@ -21,7 +21,7 @@ router.post('/', authMiddleware, async (req, res) => {
   try {
     const { lesson_id, scheduled_date } = req.body;
     const result = await db.query(
-      'INSERT INTO bookings (student_id, lesson_id, scheduled_date, status) VALUES ($1, $2, $3, $4) RETURNING *',
+      'INSERT INTO bookings (student_id, lesson_id, scheduled_date, status) VALUES (?, ?, ?, ?)',
       [req.user.id, lesson_id, scheduled_date, 'pending']
     );
     res.status(201).json(result.rows[0]);
