@@ -1,0 +1,109 @@
+.teacher-detail-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.teacher-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.teacher-header h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.teacher-header .bio {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.teacher-booking {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.teacher-booking h2 {
+  margin-bottom: 20px;
+}
+
+.booking-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.booking-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.booking-form button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.booking-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.reviews-section {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.reviews-section h2 {
+  margin-bottom: 20px;
+}
+
+.review {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.review:last-child {
+  border-bottom: none;
+}
+
+.review p {
+  margin: 10px 0;
+}
+
+.review p:first-child {
+  font-weight: 600;
+  color: #667eea;
+}

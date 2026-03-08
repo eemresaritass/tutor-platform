@@ -1,0 +1,64 @@
+.teacher-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.teacher-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.teacher-avatar {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.teacher-card h3 {
+  font-size: 24px;
+  margin: 15px 0;
+  color: #333;
+}
+
+.teacher-title {
+  color: #667eea;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.teacher-bio {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.teacher-rate {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.teacher-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.teacher-button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}

@@ -1,0 +1,27 @@
+.teachers-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.teachers-page h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 36px;
+}
+
+.teachers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .teachers-page h1 {
+    font-size: 28px;
+  }
+
+  .teachers-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,23 @@
+.messages-page {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.messages-page h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.messages-container {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.messages-container p {
+  color: #666;
+  font-size: 16px;
+}
