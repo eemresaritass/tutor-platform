@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.local
+.DS_Store
+.vscode/
+build/
+dist/
+*.log
+.idea/
+.next/
+out/
+public/static
+.parcel-cache

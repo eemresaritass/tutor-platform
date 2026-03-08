@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tutor-platform/static/css/main.63ebe4be.css",
+    "main.js": "/tutor-platform/static/js/main.88afcf57.js",
+    "index.html": "/tutor-platform/index.html",
+    "main.63ebe4be.css.map": "/tutor-platform/static/css/main.63ebe4be.css.map",
+    "main.88afcf57.js.map": "/tutor-platform/static/js/main.88afcf57.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.63ebe4be.css",
+    "static/js/main.88afcf57.js"
+  ]
+}
